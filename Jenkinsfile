@@ -11,7 +11,7 @@ pipeline {
 
 		stage('OWASP Dependency-Check Vulnerabilities') {
 			steps {
-				dependencyCheck additionalArguments: '--format HTML --format XML', 
+				dependencyCheck additionalArguments: '--format HTML --format XML --suppression suppression.xml', 
 				nvdCredentialsId: 'nvd-api-key',
 				odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
 				
