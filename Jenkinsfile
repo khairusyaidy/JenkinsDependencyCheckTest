@@ -1,5 +1,12 @@
 pipeline {
-	agent any
+    agent any
+
+    environment {
+        // Define your API key as an environment variable
+        NVD_API_KEY = credentials('nvd-api-key')  // Use the ID you gave the API key credential
+    }
+
+
 	stages {
 		stage('Checkout SCM') {
 			steps {
